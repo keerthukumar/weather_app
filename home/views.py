@@ -3,8 +3,7 @@ import requests
 
 # Create your views here.
 def home(request):
-    city = request.GET.get('city', "Coimbatore")
-    
+    city = request.GET.get('city', '')#"Coimbatore")
     url = f'https://api.openweathermap.org/data/2.5/weather?q={city}&appid=7f6ee3be01a5fa2056a57fc77c37d1a9'
 
     data = requests.get(url).json()
